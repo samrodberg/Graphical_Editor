@@ -3,6 +3,6 @@
  * @author Sam Rodberg
  * @version 1/25/16
  */
-public class BackCmd {
+public class BackCmd extends Command {
 
 }

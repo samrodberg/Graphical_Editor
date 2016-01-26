@@ -149,7 +149,7 @@ public class Editor extends JApplet {
    */
   private class RectButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new MakeRect();
       repaint();
     }
   }
@@ -179,7 +179,7 @@ public class Editor extends JApplet {
    */
   private class MoveButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new MoveCmd();
       repaint();
     }
   }
@@ -189,7 +189,7 @@ public class Editor extends JApplet {
    */
   private class DeleteButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new DeleteCmd();
       repaint();
     }
   }
@@ -199,7 +199,7 @@ public class Editor extends JApplet {
    */
   private class FrontButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new FrontCmd();
       repaint();
     }
   }
@@ -209,7 +209,7 @@ public class Editor extends JApplet {
    */
   private class BackButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new BackCmd();
       repaint();
     }
   }
@@ -219,7 +219,7 @@ public class Editor extends JApplet {
    */
   private class ExchangeButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new ExchangeCmd();
       repaint();
     }
   }
@@ -232,6 +232,7 @@ public class Editor extends JApplet {
     public void actionPerformed(ActionEvent event) {
       colorBox.show(Color.RED);
       dwg.setColor(Color.RED);
+      cmd = new ColorCmd();
       repaint();
     }
   }
@@ -244,6 +245,7 @@ public class Editor extends JApplet {
     public void actionPerformed(ActionEvent event) {
       colorBox.show(Color.GREEN);
       dwg.setColor(Color.GREEN);
+      cmd = new ColorCmd();
       repaint();
     }
   }
@@ -256,6 +258,7 @@ public class Editor extends JApplet {
     public void actionPerformed(ActionEvent event) {
       colorBox.show(Color.BLUE);
       dwg.setColor(Color.BLUE);
+      cmd = new ColorCmd();
       repaint();
     }
   }
