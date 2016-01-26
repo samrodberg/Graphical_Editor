@@ -227,9 +227,11 @@ public class Editor extends JApplet {
   /**
    * What to do when redButton is pressed.
    */
+  // Use colorBox.show
   private class RedButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      colorBox.show(Color.RED);
+      dwg.setColor(Color.RED);
       repaint();
     }
   }
@@ -237,9 +239,11 @@ public class Editor extends JApplet {
   /**
    * What to do when greenButton is pressed.
    */
+  //Use colorBox.show
   private class GreenButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      colorBox.show(Color.GREEN);
+      dwg.setColor(Color.GREEN);
       repaint();
     }
   }
@@ -247,9 +251,11 @@ public class Editor extends JApplet {
   /**
    * What to do when blueButton is pressed.
    */
+  //Use colorBox.show
   private class BlueButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      colorBox.show(Color.BLUE);
+      dwg.setColor(Color.BLUE);
       repaint();
     }
   }

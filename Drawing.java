@@ -107,8 +107,37 @@ public class Drawing {
 		}	
 	}
 	
+	/**
+	 * Moves the desired shape to the back of the shapes list
+	 * @param inShape
+	 */
+	public void moveShapeToBack(Shape inShape){
+		if(inShape != null){
+			removeShape(inShape);
+			shapes.add(0, inShape);
+		}
+	}
 	
+	/**
+	 * Replace front shape in shapes list
+	 * @param inShape
+	 */
+	public void replaceFrontShape(Shape inShape){
+		if(inShape != null){
+			shapes.remove(shapes.size()-1);
+			addShape(inShape);
+		}
+	}
 	
+	/**
+	 * Replace back shape in shapes list
+	 * @param inShape
+	 */
+	public void replaceBackShape(Shape inShape){
+		if(inShape != null){
+			shapes.remove(0);
+			shapes.add(0, inShape);
+		}
+	}
 	
-
 }
