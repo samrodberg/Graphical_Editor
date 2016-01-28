@@ -100,10 +100,11 @@ public class Drawing {
 	 * @param inShape
 	 */
 	// Like pulling and then pushing on a stack
-	public void moveShapeToFront(Shape inShape){
-		if(inShape != null){
-			removeShape(inShape);
-			
+	public void moveShapeToFront(Point p){
+		if (p != null) {
+			Shape toFront = getFrontmostContainer(p);
+			removeShape(getFrontmostContainer(p));
+			addShape(toFront);
 		}	
 	}
 	
@@ -111,10 +112,11 @@ public class Drawing {
 	 * Moves the desired shape to the back of the shapes list
 	 * @param inShape
 	 */
-	public void moveShapeToBack(Shape inShape){
-		if(inShape != null){
-			removeShape(inShape);
-			shapes.add(0, inShape);
+	public void moveShapeToBack(Point p){
+		if(p != null){
+			Shape toBack = getFrontmostContainer(p);
+			removeShape(getFrontmostContainer(p));
+			shapes.add(toBack);
 		}
 	}
 	

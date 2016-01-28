@@ -27,7 +27,14 @@ public class MakeRect extends Command {
 					Math.abs(creationPoint.x - p.x), 
 					Math.abs(creationPoint.y - p.y), 
 					dwg.getColor()));
-			System.out.println(creationPoint.toString());
 		}
+		else{
+			dwg.replaceFrontShape(new Rect(Math.min(creationPoint.x, p.x), 
+					Math.min(creationPoint.y, p.y),
+					Math.abs(creationPoint.x - p.x), 
+					Math.abs(creationPoint.y - p.y), 
+					dwg.getColor()));
+		}
+		numberOfOperations++;
 	}
 }
