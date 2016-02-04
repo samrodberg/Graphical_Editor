@@ -169,7 +169,7 @@ public class Editor extends JApplet {
    */
   private class LineButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-      // YOU FILL THIS IN.
+      cmd = new MakeSegment();
       repaint();
     }
   }
