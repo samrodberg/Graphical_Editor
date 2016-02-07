@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Point;
 
 /**
@@ -6,35 +7,36 @@ import java.awt.Point;
  * @version 1/26/15
  */
 public class MakeRect extends Command {
-	private Point creationPoint;
-	private int numberOfOperations;
-	
-	public MakeRect(){
-		this.creationPoint = null;
-		this.numberOfOperations = 0;
-		
-	}
+	private double pressedX;
+	private double pressedY;
+	private double height;
+	private double width;
+	private Color color;
+	private Rect toBeAdded;
+	private Point startPoint;
+	private Point endPoint;
 	
 	public void executePress(Point p, Drawing dwg){
-		creationPoint = p;
-		numberOfOperations = 0;
+		this.height = 0;
+		this.width = 0;
+		this.pressedX = p.x;
+		this.pressedY = p.y;
+		this.startPoint = p;
+		this.color = dwg.getColor();
+		toBeAdded = new Rect(color, startPoint);
+		dwg.addShape(toBeAdded);
 	}
 	
 	public void executeDrag(Point p, Drawing dwg){
-		if(numberOfOperations == 0){
-			dwg.addShape(new Rect(Math.min(creationPoint.x, p.x), 
-					Math.min(creationPoint.y, p.y),
-					Math.abs(creationPoint.x - p.x), 
-					Math.abs(creationPoint.y - p.y), 
-					dwg.getColor()));
-		}
-		else{
-			dwg.replaceFrontShape(new Rect(Math.min(creationPoint.x, p.x), 
-					Math.min(creationPoint.y, p.y),
-					Math.abs(creationPoint.x - p.x), 
-					Math.abs(creationPoint.y - p.y), 
-					dwg.getColor()));
-		}
-		numberOfOperations++;
+		this.endPoint = p;
+		height = Math.abs(endPoint.x - startPoint.x);
+		width = Math.abs(endPoint.y - startPoint.y);
+		double minX = Math.min(endPoint.x,startPoint.x);
+		double minY = Math.min(endPoint.y,startPoint.y);
+		Point setPoint = new Point((int) minX, (int) minY);
+		toBeAdded = new Rect(color, setPoint);
+		toBeAdded.changeDimensions(height, width);
+		dwg.replaceFrontShape(toBeAdded);
+		
 	}
 }
