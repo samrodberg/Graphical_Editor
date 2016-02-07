@@ -79,10 +79,14 @@ public class Segment extends Shape {
 	@Override
 	//Use almost contains point helper and distance to point helper
 	//If the distance to the point is within the tolerance and almost contains
-	//the point its true else false
+	//the point its true else false.  Also tolerance must be greater then or
+	//equal to the distance to the point
+	//If set to always true containsPoint method delete, move work and front
+	//back, and exchange sort of do as well
 	public boolean containsPoint(Point p) {
-		// TODO Auto-generated method stub
-		return false;
+		double dtpCondition;
+		boolean acpConditon;
+		return true;
 	}
 
 	@Override
