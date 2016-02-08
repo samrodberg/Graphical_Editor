@@ -20,7 +20,14 @@ public class Segment extends Shape {
 	private double y2;
 	private static final double TOLERANCE = 3.0;
 	private Color color;
-
+	
+	/**
+	 * Constructor for a line segment based on start point and end point
+	 * as well the current drawing color
+	 * @param c
+	 * @param startPoint
+	 * @param endPoint
+	 */
 	public Segment(Color c, Point startPoint, Point endPoint) {
 		super(c);
 		this.x1 = startPoint.x;
@@ -69,6 +76,10 @@ public class Segment extends Shape {
 	}
 
 	@Override
+	/**
+	 * Draws the segment page
+	 * @param page
+	 */
 	public void drawShape(Graphics page) {
 		page.setColor(color);
 		page.drawLine((int) x1,(int) y1,(int) x2,(int) y2);
@@ -83,6 +94,10 @@ public class Segment extends Shape {
 	//equal to the distance to the point
 	//If set to always true containsPoint method delete, move work and front
 	//back, and exchange sort of do as well
+	/**
+	 * Returns true if the segement contains the point false otherwise
+	 * @param p
+	 */
 	public boolean containsPoint(Point p) {
 		double dtpCondition;
 		boolean acpConditon;
@@ -90,6 +105,11 @@ public class Segment extends Shape {
 	}
 
 	@Override
+	/**
+	 * Moves the line segment to the desired spot on the screen
+	 * @param deltaX
+	 * @param deltaY	
+	 */
 	public void move(int deltaX, int deltaY) {
 		x1 += deltaX;
 		x2 += deltaX;
@@ -101,6 +121,9 @@ public class Segment extends Shape {
 	@Override
 	// According to purplemath.com the center point formula for a line is
 	//[(x1 + x2)/2,(y1 + y2)/2]
+	/**
+	 * Returns the cetner point of a segement
+	 */
 	public Point getCenter() {
 		double xCenter = (x1 + x2) / 2;
 		double yCenter = (y1 + y2) / 2;

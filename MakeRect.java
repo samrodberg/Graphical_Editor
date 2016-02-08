@@ -4,7 +4,7 @@ import java.awt.Point;
 /**
  * Makes a rectangle
  * @author Sam Rodberg
- * @version 1/26/15
+ * @version 2/7/16
  */
 public class MakeRect extends Command {
 	private double pressedX;
@@ -16,6 +16,11 @@ public class MakeRect extends Command {
 	private Point startPoint;
 	private Point endPoint;
 	
+	/**
+	 * When pressed adds the rectangle to the shapes list 
+	 * @param p
+	 * @param dwg
+	 */
 	public void executePress(Point p, Drawing dwg){
 		this.height = 0;
 		this.width = 0;
@@ -27,6 +32,12 @@ public class MakeRect extends Command {
 		dwg.addShape(toBeAdded);
 	}
 	
+	/**
+	 * Drags outs the boundaries of the rectangle and actually draws its
+	 * final rectangle when released
+	 * @param p
+	 * @param dwg
+	 */
 	public void executeDrag(Point p, Drawing dwg){
 		this.endPoint = p;
 		height = Math.abs(endPoint.x - startPoint.x);

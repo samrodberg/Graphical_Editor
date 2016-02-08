@@ -18,7 +18,11 @@ public class Rect extends Shape {
 	private double yCord;
 	private Color color;
 	
-
+	/**
+	 * Constructor for creating a rectangle based on a color and a point
+	 * @param c
+	 * @param p
+	 */
 	public Rect(Color c, Point p) {
 		super(c);
 		this.height = 0;
@@ -28,6 +32,10 @@ public class Rect extends Shape {
 	}
 
 	@Override
+	/**
+	 * Draws the rectangle on the page
+	 * @param page
+	 */
 	public void drawShape(Graphics page) {
 		page.fillRect((int) xCord,(int) yCord,(int) width,(int) height);
 		
@@ -35,6 +43,10 @@ public class Rect extends Shape {
 
 	@Override
 	//Boundary containment for points is critical
+	/**
+	 * Returns true if the rectangle contains the point false otherwise
+	 * @param p
+	 */
 	public boolean containsPoint(Point p) {
 		if(p.x >= xCord && p.x <= xCord + width 
 				&& p.y >= yCord && p.y <= yCord + height){
@@ -44,6 +56,11 @@ public class Rect extends Shape {
 	}
 
 	@Override
+	/**
+	 * Moves the rectangle to the desired location
+	 * @param deltaX
+	 * @param deltaY
+	 */
 	public void move(int deltaX, int deltaY) {
 		xCord += deltaX;
 		yCord += deltaY;
@@ -53,6 +70,10 @@ public class Rect extends Shape {
 	@Override
 	// Geometrically the center of a rectangle is
 	// half the height and half the width
+	/**
+	 * Returns the center point of rectangle
+	 * 
+	 */
 	public Point getCenter() {
 		int xCenter = (int) ((xCord + width) / 2);
 		int yCenter = (int) ((yCord + height) / 2);

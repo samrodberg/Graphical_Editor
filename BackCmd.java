@@ -1,9 +1,9 @@
 import java.awt.Point;
 
 /**
- * Will be the basis of the back button functionality
+ * The basis of the back button functionality
  * @author Sam Rodberg
- * @version 1/25/16
+ * @version 2/7/16
  */
 public class BackCmd extends Command {
 	

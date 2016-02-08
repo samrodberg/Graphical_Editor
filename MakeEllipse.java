@@ -2,9 +2,9 @@ import java.awt.Color;
 import java.awt.Point;
 
 /**
- * Makes a ellipse
+ * Makes a ellipse on the drawing
  * @author Sam Rodberg
- * @version 1/26/16
+ * @version 2/7/16
  */
 public class MakeEllipse extends Command {
 	private double width;
@@ -14,6 +14,11 @@ public class MakeEllipse extends Command {
 	private Color color;
 	
 	// Height and weight changed after using changeDimensions method
+	/**
+	 * When pressed the ellipse is added to the drawing shape list
+	 * @param p
+	 * @param dwg
+	 */
 	public void executePress(Point p, Drawing dwg){
 		this.xCord = p.x;
 		this.yCord = p.y;
@@ -24,6 +29,11 @@ public class MakeEllipse extends Command {
 		dwg.addShape(ellipseToBeAdded);
 	}
 	
+	/**
+	 * When dragged the ellipse is dragged out and then actually drawn
+	 * @param p
+	 * @param dwg
+	 */
 	public void executeDrag(Point p, Drawing dwg){
 		//Setup a height and width since we hadn't done so before to be passed into
 		//changeDimensions method

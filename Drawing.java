@@ -1,10 +1,10 @@
-/**	Drawing class handles painting and other related tasks
- * @author Sam Rodberg
- * @version 1/23/16
- */
-
 import java.awt.*;
 import java.util.ArrayList;
+
+/**	Drawing class handles painting and other related tasks
+ * @author Sam Rodberg
+ * @version 2/7/16
+ */
 
 public class Drawing {
 	

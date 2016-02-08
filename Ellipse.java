@@ -21,6 +21,12 @@ public class Ellipse extends Shape {
 	
 	//Experimenting with bounding block free constructor latter set through dimensions
 	//when MakeEllipse button is triggered
+	/**
+	 * Constructor for creating an ellipse based on the current point
+	 * and drawing color
+	 * @param c
+	 * @param p
+	 */
 	public Ellipse(Color c, Point p) {
 		super(c);
 		this.xCord = p.x;
@@ -46,6 +52,9 @@ public class Ellipse extends Shape {
   }
 
   	@Override
+  	/** Draws the ellipse on the graphics page
+  	 * @param page
+  	 */
   	public void drawShape(Graphics page) {
   		page.setColor(color);
   		page.fillOval((int) xCord, (int) yCord, (int) width, (int) height);
@@ -53,11 +62,21 @@ public class Ellipse extends Shape {
   	}	
 
 	@Override
+	/**
+	 * Take a point and see if the ellipse contains that point
+	 * @param p
+	 */
 	public boolean containsPoint(Point p) {
 		return pointInEllipse(p, (int) xCord, (int) yCord, (int) width, (int) height);
 	}
-
+	
+	
 	@Override
+	/**
+	 * The distance you want to move the ellipse
+	 * @param deltaX
+	 * @param deltaY
+	 */
 	public void move(int deltaX, int deltaY) {
 		xCord += deltaX;
 		yCord += deltaY;
@@ -66,6 +85,9 @@ public class Ellipse extends Shape {
 	
 	//Account for bounding box
 	@Override
+	/**
+	 * Returns the center point of the ellipse
+	 */
 	public Point getCenter() {
 		double centerX = (xCord + width) / 2;
 		double centerY = (yCord + height) /2;

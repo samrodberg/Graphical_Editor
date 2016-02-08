@@ -4,7 +4,7 @@ import java.awt.Point;
 /**
  * Makes a line segment
  * @author Sam Rodberg
- * @version 2/2/1
+ * @version 2/7/16
  */
 public class MakeSegment extends Command{
 	private double x1;
@@ -15,6 +15,11 @@ public class MakeSegment extends Command{
 	private Point endPoint;
 	private Color color;
 	
+	/**
+	 * When pressed creates a line segement and adds to the shapes list
+	 * @param p
+	 * @param dwg
+	 */
 	public void executePress(Point p, Drawing dwg){
 		x1 = p.x;
 		y1 = p.y;
@@ -24,6 +29,11 @@ public class MakeSegment extends Command{
 		dwg.addShape(toBeAdded);
 	}
 	
+	/**
+	 * Actually draws the line segment on the drawing
+	 * @param p
+	 * @param dwg
+	 */
 	public void executeDrag(Point p, Drawing dwg){
 		x2 = p.x;
 		y2 = p.x;
